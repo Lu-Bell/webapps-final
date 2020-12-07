@@ -1,0 +1,39 @@
+body{
+    background-color: bisque;
+    text-align: center;
+    font-family: Chalkduster, fantasy;
+}
+h1{
+    background-color: rgb(9, 87, 9);
+    color: white;
+}
+#queryByCourseLevel{
+    background-color: rgb(9, 87, 9);
+    color: white;
+}
+#results_view{
+    border-color:white;
+}
+
+li{
+    border-color: white;
+    background-color: rgb(9, 87, 9);
+    color: white;
+}
+
+#queryUndergraduate{
+    background-color: rgb(9, 87, 9);
+    color: white;
+}
+#queryGraduate{
+    background-color: rgb(9, 87, 9);
+    color: white;
+}
+
+#allCourses{
+    margin: auto;
+    background-color: rgb(9, 87, 9);
+    color: white;
+}
+
+

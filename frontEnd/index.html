@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--BOOTSTRAP-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!--JAVASCRIPT-->
+    <script src = "script.js"></script>
+    <!--HANDLEBARS LIBRARY-->
+    <script src = "https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <title>UIS</title>
+</head>
+<body>
+    <div id = "app_widget" class = "widget_app">
+    </div>
+
+        <h1>Please Select Your Courses!</h1>
+        <div id = "courses">
+            <a href="https://www.ratemyprofessors.com">Click here to view your professors rating!</a>
+
+            <!-- BUTTON FOR ALL COURSES -->
+            <button type="button" id = "allCourses" data-querytype="allCourses" onclick = "update_view(this)" class="btn btn-success">All Available Courses</button>
+            <div class="input-group mb-3">
+                <!-- SEARCH PROFESSOR INPUT-->
+                <input type="text" class="form-control" id="queryByInstructor" placeholder="Search Professors">
+                <div class="input-group-append">
+                  <button class="btn btn-success" type="submit" id = "instructor_button" onclick = "update_instructor_view(this)" data-querytype="by_instructor" data-instructor = "instructor">Submit</button> 
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <!-- SEARCH CODE INPUT-->
+                <input type="text" class="form-control" id="queryByCode" placeholder="Search Course Code">
+                <div class="input-group-append">
+                  <button class="btn btn-success" type="submit" id = "code_button" onclick = "update_code_view(this)" data-querytype="by_code" data-code = "code">Submit</button> 
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <!-- SEARCH TITLE INPUT-->
+                <input type="text" class="form-control" id="queryByTitle" placeholder="Search Course Title">
+                <div class="input-group-append">
+                  <button class="btn btn-success" type="submit" id = "title_button" onclick = "update_title_view(this)" data-querytype="by_title" data-title = "title">Submit</button> 
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <!-- SEARCH LEVEL INPUT-->
+            <input type="text" class="form-control" id="queryByLevel" placeholder="Search Level">
+            <div class="input-group-append">
+              <button class="btn btn-success" type="submit" id = "level_button" onclick = "update_level_view(this)" data-querytype="by_level" data-level = "level">Submit</button> 
+            </div>
+        </div>
+
+        <!--ADVANCED SEARCH-->
+        <br>
+
+        <h1>ADVANCED SEARCH</h1>
+
+        <input type="text" class="form-control" id="queryByName" placeholder="Search Professors">
+        <input type="text" class="form-control" id="queryByLvl" placeholder="Search Level">
+        <button type="submit" id = "advanced" data-querytype="advanced" onclick = "update_combined_view(this)" class="btn btn-success">Submit</button>
+
+    <div id = "results">
+    </div>
+
+    <div id = "advanced">
+    </div>
+    
+</body>
+</html>
+
+
+<script id = "results_view" type = "text/x-handlebars-template">
+
+    <ul>
+         {{#each courses}}
+            <li><br> Course Code : {{this.course_code}} <br> Course Title : {{this.title}} <br> Instructor : {{this.instructor}} <br> Course Level : {{this.course_level}}</li>
+        {{/each}}
+    </ul>
+
+
+</script>
+
+
